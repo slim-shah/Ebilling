@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        form {
+          background: #a59f9a;
+          padding: 40px;
+          max-width: 600px;
+          margin: 40px auto;
+          border-radius: 4px;
+          box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+        }
+    </style>
+</head>
+<body>
+<form action="@{Application.userdata()}" method="post">
+    <fieldset ><legend> Fill Up Details </legend>
+        <center>
+            <label>Grahak Number:</label><input type="text" name="grahak_no" id="gname"/><br><br>
+            <label>First Name:</label><input type="text" name="fname" id="name"/><br><br>
+            <label for="lname">Last Name:</label><input type="text" name="lname" id="lname"/><br><br>
+            <label for="address">Address:</label><input type="text" name="address" id="address"/><br><br>
+            <label for="phone">Phone:</label><input type="number" name="phone" id="phone"/><br><br>
+            <label for="password">Password:</label><input type="password" name="password" id="password"/><br><br>
+            <label><input type="submit" value="Submit" id="submit1"/></label>
+        </center>
+    </fieldset>
+</form>
+</body>
+</html>

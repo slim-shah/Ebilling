@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #form {
+          background: #a59f9a;
+          padding: 40px;
+          max-width: 600px;
+          margin: 40px auto;
+          border-radius: 4px;
+          box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+        }
+        #form1 {
+          float : left;
+        }
+    </style>
+</head>
+<body>
+<H1>Welcome ${check}</H1>
+<form action="@{Application.logout()}" id="form1">
+    <input type="submit" value="Logout">
+</form>
+<form action="@{Application.company_add()}" method="post" id="form">
+    <fieldset ><legend> Fill Up Details for Grahak Bill </legend>
+        <center>
+            <label>Grahak Number:</label><input type="text" name="grahak_no" id="gname"/><br><br>
+            <label>Bill_ID:</label><input type="text" name="Bill_ID" id="Bill_ID"/><br><br>
+            <label >Bill_Month:</label><input type="text" name="Bill_Month" id="bMonth"/><br><br>
+            <label >Bill_Amount:</label><input type="text" name="Bill_Amount" id="bAmount"/><br><br>
+            <label >Paid:</label><input type="text" name="Paid" id="paid"/><br><br>
+            <input type="hidden" name="check" value="${check}">
+            <label><input type="submit" value="Add_Bill" /></label>
+        </center>
+    </fieldset>
+</form>
+
+</body>
+</html>

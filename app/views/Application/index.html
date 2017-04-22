@@ -1,0 +1,50 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<html>
+<head>
+    <style>
+        body{
+           text-align:center;
+           padding:100px;
+           background-image: url('back.jpg');
+           background:grey;
+
+        }
+        input{
+         width: 10%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+
+    }
+    h1{
+    font-color:white;
+    }
+
+    </style>
+</head>
+<body>
+<div>
+    <h1>WElCOME TO EBILLING</h1>
+    <h3>Already have an account ?</h3>
+    <form action="@{Application.login()}">
+        <input type="submit" value="login"/>
+    </form>
+    <br>
+    <h3> Create new account:</h3>
+    <form action="@{Application.signup()}">
+        <input type="submit" value="signup"/>
+    </form>
+    <h3> Admin Signup:</h3>
+    <form action="@{Application.signup_admin()}">
+        <input type="submit" value="signup"/>
+    </form>
+    <h3> Admin Login:</h3>
+    <form action="@{Application.login_admin()}">
+        <input type="submit" value="login"/>
+    </form>
+
+</div>
+</body>
+</html>

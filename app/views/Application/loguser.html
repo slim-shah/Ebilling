@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <style type="text/css">
+        #left{
+           width:700px;
+           float:left;
+           height:1000px;
+           border-right: 5px solid black;
+
+        }
+        #right{
+            width:700px;
+            height:1000px;
+            float:left;
+            margin-left:90px;
+            margin-right:0px;
+        }
+
+        #2{
+        height:1000px;
+        width:1600px;
+        }
+        #1{
+        height:200px;
+        width:1600px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div style="text-align:center" id="1">
+    <table align="center">
+     <tr>
+         <td>
+             <h1>Welcome ${check}</h1>
+         </td>
+         <td>
+             <t></t>
+         </td>
+
+        <td>
+         <form action="@{Application.logout()}" method="post" id="form">
+             <input type="submit" value="logout">
+         </form>
+         </td>
+     </tr>
+    </table>
+
+
+</div>
+<div id="2">
+    <div id="left">
+        <form action="@{Application.log_user()}" method="post">
+            <input type="hidden" name="username" value="${username}">
+            <input type="hidden" name="check" value="${check}">
+            Bill-id : <input type="text" name="bill_id">
+            <input type="submit" value="search">
+        </form>
+
+    </div>
+    <div id="right">
+        #{if    result_String }
+        <h3>Bill_id : ${result_String.get(0)}</h3>
+        <h3>Bill_Month : ${result_String.get(1)}</h3>
+        <h3>Bill_Amount : ${result_String.get(2)}</h3>
+        <h3>Paid : ${result_String.get(3)}</h3>
+        <form action="@{Application.Pay()}">
+            <input type="hidden" name="username" value="${username}">
+            <input type="hidden" name="check" value="${check}">
+            <input type="hidden" name="bill_id" value="${result_String.get(4)}">
+            <input type="submit" value="Pay">
+        </form>
+        #{/if}
+
+    </div>
+</div>
+</body>
+</html>

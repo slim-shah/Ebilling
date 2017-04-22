@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+         form {
+          background: #a59f9a;
+          padding: 40px;
+          max-width: 600px;
+          margin: 40px auto;
+          border-radius: 4px;
+          box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+        }
+    </style>
+</head>
+<body>
+#{if invalid }
+<h3>${invalid}</h3>
+#{/if}
+<form action="@{Application.loguser()}" method="post">
+    User name(Grahak number):<input type="text" name="username"/><br>
+    Password: <input type="password" name="password"/><br>
+    <input type="submit" value="submit"/>
+</form>
+</body>
+</html>
